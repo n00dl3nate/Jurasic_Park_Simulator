@@ -16,15 +16,29 @@ const PaddockDetails = (props) => {
     return null;
   }
 
-  console.log(props.paddock,"More of your data dick")
+  if(props.paddock.name === 'Lab'){
+    if(!(!props.paddock._embedded.dinosaur)){
+      return null
+    }
+    else{
+      return <DinosaurList dinosaurs = {props.paddock._embedded.dinosaurs}/>
+    }
+  }
+
+  if(!props.paddock._embedded.dinosaurs){
+    return (
+      <React.Fragment>
+      <button onClick={onDelete}>Destroy Paddock</button>
+      <button onClick={onEdit}>Edit Paddock</button>
+      </React.Fragment>
+    )
+  }
 
   return (
     <React.Fragment>
-    <ul>
-    </ul>
     <button onClick={onDelete}>Destroy Paddock</button>
     <button onClick={onEdit}>Edit Paddock</button>
-    <DinosaurList dinosaurs = {props.paddock._embedded.dinosaurs}/>
+    <DinosaurList dinosaurs = {props.paddock._embedded.dinosaurs} pad = {true}/>
     </React.Fragment>
 
 

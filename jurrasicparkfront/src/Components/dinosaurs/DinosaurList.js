@@ -3,22 +3,34 @@ import Dinosaur from './Dinosaur.js';
 
 
 const DinosaurList = (props) => {
+	console.log(props,"HEre y go ")
 	const dinosaurs = props.dinosaurs.map((dinosaur) => {
 		 	return (
-				<li key={dinosaur.id} className="component-item">
-					<div className = "component">
-				<Dinosaur paddock={dinosaur.paddock} dinosaur={dinosaur} />
-			     </div>
-			</li>
+				<>
+				<Dinosaur paddock={dinosaur.paddock} dinosaur={dinosaur} handleDelete = {props.handleDelete} handleEdit={props.handleEdit} handleFeed={props.handleFeed}/>
+				</>
 		)
 		})
 
 	return (
 		<>
-		<h1>Dinosaurs</h1>
-		<ul className="component-list">
+		<ul>
+		
+			<table id="dinosaurs">
+
+
+			<tr class="tableHeading">
+				<td>Name</td>
+				<td>Type</td>
+				<td>Food</td>
+				<td>Paddock</td>
+				<td>Select</td>
+				<td>Feed</td>
+				<td>Remove</td>
+			</tr>
 	    {dinosaurs}
-	  </ul>
+			</table>
+		</ul>
 		</>
 	)
 }

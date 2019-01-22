@@ -6,24 +6,17 @@ const NavBar = (props) => {
 
   return (
     <header>
-      <img src="/images/Jurassic_Park.png" alt="Logo"/>
+      <a href="http://localhost:3000/"><img  src="/images/Jurassic_Park.png" alt="Logo"/></a>
 
       <ul>
         <li className="navLink">
           <Link to="/dinosaurs">Dinosaurs</Link>
         </li>
-        <li className="navLink">
-          <Link to="/dinosaurs/new">New Dinosaurs</Link>
-        </li>
+
         <li className="navLink">
           <Link to="/paddocks">Paddocks</Link>
         </li>
-        <li className="navLink">
-          <Link to="/paddocks/new">Paddock new</Link>
-        </li>
-        <li className="navLink">
-          <Link to="/zones">ParkView</Link>
-        </li>
+
         <li className="navLink">
           <Link to="/visitors" >Visitors</Link>
         </li>

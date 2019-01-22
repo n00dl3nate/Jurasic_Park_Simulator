@@ -49,6 +49,13 @@ class VisitorListContainer extends Component {
     request.send();
   }
 
+  handleDelete(id){
+    const request = new Request();
+    const url = '/visitors/' + id;
+    request.delete(url).then(() => {
+      window.location = '/dinosaurs'
+    })
+  }
 
   addVisitor(){
     this.requestNewVisitor()
@@ -64,7 +71,7 @@ class VisitorListContainer extends Component {
   render(){
     return (
       <>
-     <VisitorList addVisitor={this.addVisitor} visitors = {this.state.visitors} />
+     <VisitorList addVisitor={this.addVisitor} visitors = {this.state.visitors} handleDelete={this.handleDelete} />
      </>
     )
   }

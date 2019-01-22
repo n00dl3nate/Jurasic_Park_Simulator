@@ -5,12 +5,7 @@ const VisitorList = (props) => {
   console.log(props,"@@@@@")
 	const visitors = props.visitors.map((visitor) => {
 		 	return (
-				<li key={visitor.id} className="component-item">
-					<div className = "component">
-				<Visitor visitor={visitor} zone={visitor.zone} />
-			     </div>
-			</li>
-		)
+				<Visitor visitor={visitor} zone={visitor.zone} />)
 		})
 
     const addVisitor = () => {
@@ -19,11 +14,20 @@ const VisitorList = (props) => {
 
 	return (
     <>
-    <h1>Visitors</h1>
+    <ul>
+    <h1 class = "heading">Visitors</h1>
     <button onClick={addVisitor}>Add Visitor</button>
-		<ul className="component-list">
+
+    <table id="dinosaurs">
+      <tr class="tableHeading">
+        <td>Name</td>
+        <td>Age</td>
+        <td>Money</td>
+        <td>Remove</td>
+      </tr>
 	    {visitors}
-	  </ul>
+      </table>
+      </ul>
     </>
 	)
 }

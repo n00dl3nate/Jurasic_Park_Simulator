@@ -11,6 +11,28 @@ class DinosaurListContainer extends Component {
     }
   }
 
+  handleFeed(dinosaur,id){
+    console.log(dinosaur,"Your DIno Kid");
+    console.log(this.props,"Your Propppppsss init");
+    const request = new Request();
+    request.patch('/dinosaurs/' + id, dinosaur).then(() => {
+      window.location = '/dinosaurs'
+    })
+  }
+
+  handleDelete(id){
+    const request = new Request();
+    const url = '/dinosaurs/' + id;
+    request.delete(url).then(() => {
+      window.location = '/dinosaurs'
+    })
+  }
+
+  handleEdit(id){
+    console.log(id,"yeoooooooo");
+    window.location = '/dinosaurs/edit/' + id
+  }
+
   componentDidMount(){
     let request = new Request()
     request.get('/dinosaurs').then((data) => {
@@ -18,11 +40,33 @@ class DinosaurListContainer extends Component {
     })
   }
 
-
   render(){
-    console.log(this.state.dinosaurs)
+
+    if(this.props.pad === true){
+      return (
+        <>
+        <h1 class = "heading">Dinosaurs</h1>
+        <h3 class="SubHeadingH3">Total Number Of Dinosaurs:
+         {this.state.dinosaurs.length}</h3>
+         <div class="addButton">
+         <form action={"http://localhost:3000/dinosaurs/new"}><input type="submit" value="Create New Dinosaur" class='buttonAdd'/> </form>
+         </div>
+       <DinosaurList dinosaurs = {this.state.dinosaurs}  handleDelete = {this.handleDelete} handleEdit={this.handleEdit} handleFeed = {this.handleFeed} pad = {false}/>
+       </>
+      )
+    }
+
+
     return (
-     <DinosaurList dinosaurs = {this.state.dinosaurs} />
+      <>
+      <h1 class = "heading">Dinosaurs</h1>
+      <h3 class="SubHeadingH3">Total Number Of Dinosaurs:
+       {this.state.dinosaurs.length}</h3>
+       <div class="addButton">
+       <form action={"http://localhost:3000/dinosaurs/new"}><input type="submit" value="Create New Dinosaur" class='buttonAdd'/> </form>
+       </div>
+     <DinosaurList dinosaurs = {this.state.dinosaurs}  handleDelete = {this.handleDelete} handleEdit={this.handleEdit} handleFeed = {this.handleFeed} pad = {false}/>
+     </>
     )
   }
 }

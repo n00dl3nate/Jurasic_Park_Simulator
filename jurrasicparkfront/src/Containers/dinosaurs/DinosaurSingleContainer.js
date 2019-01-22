@@ -29,13 +29,10 @@ class DinosaurSingleContainer extends Component {
   }
 
   handleEdit(id){
-    console.log(id,"yeoooooooo");
     window.location = '/dinosaurs/edit/' + id
   }
 
   handleFeed(dinosaur,id){
-    console.log(dinosaur,"Your DIno Kid");
-    console.log(this.props,"Your Propppppsss init");
     const request = new Request();
     request.patch('/dinosaurs/' + id, dinosaur).then(() => {
       window.location = '/dinosaurs/' + id
@@ -49,10 +46,11 @@ class DinosaurSingleContainer extends Component {
     }
 
     return (
-      <div className="component">
-       <Dinosaur paddock = {this.state.dinosaur._embedded.paddock} dinosaur = {this.state.dinosaur} />
+      <>
+       <Dinosaur paddock = {this.state.dinosaur._embedded.paddock} dinosaur = {this.state.dinosaur} handleDelete = {this.handleDelete} handleEdit={this.handleEdit} handleFeed = {this.handleFeed}/>
+
        <DinosaurDetails dinosaur = {this.state.dinosaur} handleDelete = {this.handleDelete} handleEdit={this.handleEdit} paddocks = {this.state.dinosaur._embedded.paddock} handleFeed = {this.handleFeed}/>
-     </div>
+     </>
     )
 
   }

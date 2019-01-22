@@ -3,6 +3,26 @@ import {Link} from 'react-router-dom';
 
 const Dinosaur = (props) => {
 
+  const onDelete = () => {
+    props.handleDelete(props.dinosaur.id);
+  }
+
+  const feed = () => {
+    const dinosaur = {
+        "food": (props.dinosaur.food += 10),
+      }
+      const id = props.dinosaur.id
+    props.handleFeed(dinosaur,id)
+  }
+
+
+  const onEdit = () => {
+    console.log(props.dinosaur,"YEOOHHH");
+    props.handleEdit(props.dinosaur.id)
+  }
+
+  console.log(props,"HDE")
+
   if(!props.dinosaur && !props.paddock){
     return null;
   }
@@ -10,40 +30,33 @@ const Dinosaur = (props) => {
   if(!props.dinosaur.paddock){
     return(
       <>
-    <ul>
-    <Link to = {"/dinosaurs/" + props.dinosaur.id} className="name">
-        <h3>{props.dinosaur.name}</h3>
-    </Link>
-    <li>Type:{props.dinosaur.type}</li>
-    <li>Gender:{props.dinosaur.gender}</li>
-    <li>Food Level:{props.dinosaur.food}</li>
-    <li>Diet:{props.dinosaur.diet}</li>
-    </ul>
+
+    <h1 class="heading">{props.dinosaur.name} Profile</h1>
+
+      <h2>Type: {props.dinosaur.type}</h2>
+      <h2>Gender: {props.dinosaur.gender}</h2>
+      <h2>Food Level: {props.dinosaur.food}</h2>
+      <h2>Diet: {props.dinosaur.diet}</h2>
+
     <hr></hr>
     </>
-  )
+  )}
 
-  }
-  console.log(props)
+  console.log(props,"fffdfdfd")
   return (
     <>
-      <ul>
-      <Link to = {"/dinosaurs/" + props.dinosaur.id} className="name">
-            <h3>{props.dinosaur.name}</h3>
-      </Link>
+      <tr class="rows">
+        <td>{props.dinosaur.name}</td>
+        <td>{props.dinosaur.type}</td>
+        <td>{props.dinosaur.food}/100</td>
+        <td>{props.dinosaur.paddock.name}</td>
+        <td><form action={"http://localhost:3000/dinosaurs/" + props.dinosaur.id}><input type="submit" value="Select" class='button'/> </form></td>
 
-      <li>Type:{props.dinosaur.type}</li>
-      <li>Gender:{props.dinosaur.gender}</li>
-      <li>Food Level:{props.dinosaur.food}</li>
-      <li>Diet:{props.dinosaur.diet}</li>
-      <li>Paddock Type:{props.dinosaur.paddock.type}</li>
-      </ul>
-      <hr></hr>
+        <td><button class='table' onClick={feed}>Feed</button> </td>
+        <td><button class='table' onClick={onDelete}>Kill</button></td>
+      </tr>
     </>
   )
 }
 
 export default Dinosaur;
-// <Link to = {"/dinosaurs/" + props.dinosaur.id} className="name">
-//   {props.dinosaur.name} {props.dinosaur.type}
-// </Link>

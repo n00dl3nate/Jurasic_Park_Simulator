@@ -35,6 +35,9 @@ public class Dataloader implements ApplicationRunner {
         Zone zone = new Zone("Zone 1");
         zoneRepository.save(zone);
 
+        Paddock Lab = new Paddock("Omnivore", "Lab" , zone);
+        paddockRepository.save(Lab);
+
         Paddock paddock1 = new Paddock("Herbivore","Safari Enclosure",zone);
         paddockRepository.save(paddock1);
 

@@ -6,19 +6,26 @@ const PaddockList = (props) => {
   console.log(props,"PaddockList")
 	const paddocks = props.paddocks.map((paddock) => {
 		 	return (
-				<li key={paddock.id} className="component-item">
-					<div className = "component">
-				<Paddock paddock={paddock}/>
-			     </div>
-			</li>
-		)
-		})
+        <>
+				<Paddock paddock={paddock} handleDelete = {props.handleDelete} handleEdit={props.handleEdit}/>
+        </>
+			     )
+         })
+
 	return (
     <>
-    <h1>Paddocks</h1>
-		<ul className="component-list">
+    <ul>
+    <table id="dinosaurs">
+      <tr class="tableHeading">
+        <td>Name</td>
+        <td>Type</td>
+        <td>dinosaurs</td>
+        <td>Select</td>
+				<td>Remove</td>
+      </tr>
 	    {paddocks}
-	  </ul>
+    </table>
+    </ul>
     </>
 
 	)

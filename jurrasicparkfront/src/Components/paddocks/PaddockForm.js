@@ -21,15 +21,34 @@ const PaddockForm = (props) => {
       return (
         <div>
           <form onSubmit={handleSubmit}>
-            <select name="type">
-              <option value="Carnivore">Carnivore</option>
-              <option value="Herbivore">Herbivore</option>
-              <option value="Omnivore">Omnivore</option>
-            </select>
-            <input type="text" placeholder="Name" name="name"/>
+
+          <div class="col-10">
+            <label for="type">Type</label>
+          </div>
+          <div class="col-90">
+              <select name="type">
+                <option value="Carnivore">Carnivore</option>
+                <option value="Herbivore">Herbivore</option>
+              </select>
+            </div>
+
+            <div class="col-10">
+              <label for="name">Name</label>
+            </div>
+            <div class="col-90">
+              <input type="text" placeholder="Name" name="name"/>
+            </div>
+
+            <div class="col-10">
+              <label for="name">Zone</label>
+            </div>
+
+            <div class="col-90">
             <select name="zone">
               {zoneOptions}
             </select>
+            </div>
+
             <button type="submit">Save</button>
           </form>
         </div>

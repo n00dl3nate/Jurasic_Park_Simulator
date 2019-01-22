@@ -18,7 +18,6 @@ class InfoBar extends Component {
       this.setState({visitors: data._embedded.visitors})
     })
     request.get('/zones/1').then((data) => {
-      console.log(data,"HERES you data cunt")
       this.setState({zone: data})
       this.setState({rampage: data.rampage})
     })
@@ -27,11 +26,18 @@ class InfoBar extends Component {
   render(){
     return (
         <>
-            <h4>Visitor Total: {this.state.visitors.length}</h4>
-            <h4>Rampaging: {this.state.rampage.toString()}</h4>
-            </>
+        </>
     )
   }
+
+  // render(){
+  //   return (
+  //       <>
+  //           <h4>Visitor Total: {this.state.visitors.length}</h4>
+  //           <h4>Rampaging: {this.state.rampage.toString()}</h4>
+  //       </>
+  //   )
+  // }
 }
 
 export default InfoBar;

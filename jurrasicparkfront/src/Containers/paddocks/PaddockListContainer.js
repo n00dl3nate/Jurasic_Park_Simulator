@@ -18,12 +18,28 @@ class PaddockListContainer extends Component {
     })
   }
 
+  handleDelete(id){
+
+    const request = new Request();
+    const url = '/paddocks/' + id;
+    request.delete(url).then(() => {
+      window.location = '/paddocks'
+    })
+  }
+
+  handleEdit(id){
+    window.location = '/paddocks/edit/' + id
+  }
 
   render(){
-    console.log(this.state.paddocks,"@@@#@")
-    // return ( <h1> hi</h1>)
     return (
-     <PaddockList paddocks = {this.state.paddocks} />
+      <>
+      <h1 class="heading">Paddocks</h1>
+      <div class="addButton">
+      <form action={"http://localhost:3000/paddocks/new"}><input type="submit" value="Build New Paddock" class='buttonAdd'/></form>
+      </div>
+     <PaddockList paddocks = {this.state.paddocks} handleDelete = {this.handleDelete} handleEdit={this.handleEdit} />
+     </>
     )
   }
 }

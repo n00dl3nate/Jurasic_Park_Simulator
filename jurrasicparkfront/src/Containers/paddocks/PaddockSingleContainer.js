@@ -23,11 +23,10 @@ class PaddockSingleContainer extends Component {
   }
 
   handleDelete(id){
-    console.log(id,"JJJSJSJSJ");
     const request = new Request();
     const url = '/paddocks/' + id;
     request.delete(url).then(() => {
-      // window.location = '/paddocks'
+      window.location = '/paddocks'
     })
   }
 
@@ -41,13 +40,12 @@ class PaddockSingleContainer extends Component {
     if(!this.state.paddock){
       return null;
     }
-    console.log(this.state.paddock,"Heres Your data Cunt");
 
     return (
-      <div className="component">
+      <>
         <Paddock paddock = {this.state.paddock} />
         <PaddockDetails paddock = {this.state.paddock} handleDelete = {this.handleDelete} handleEdit={this.handleEdit}/>
-      </div>
+      </>
     )
 
   }
