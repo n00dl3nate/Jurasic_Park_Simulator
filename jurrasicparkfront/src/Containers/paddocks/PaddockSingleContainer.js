@@ -30,6 +30,25 @@ class PaddockSingleContainer extends Component {
     })
   }
 
+  handleDeleteDino(id){
+    const request = new Request();
+    const url = '/dinosaurs/' + id;
+    request.delete(url).then(() => {
+      window.location = window.location.href
+    })
+  }
+
+  handleEditDino(id){
+    window.location = '/dinosaurs/edit/' + id
+  }
+
+  handleFeedDino(dinosaur,id){
+    const request = new Request();
+    request.patch('/dinosaurs/' + id, dinosaur).then(() => {
+      window.location = window.location.href
+    })
+  }
+
   handleEdit(id){
     window.location = '/paddocks/edit/' + id
   }
@@ -44,7 +63,7 @@ class PaddockSingleContainer extends Component {
     return (
       <>
         <Paddock paddock = {this.state.paddock} />
-        <PaddockDetails paddock = {this.state.paddock} handleDelete = {this.handleDelete} handleEdit={this.handleEdit}/>
+        <PaddockDetails paddock = {this.state.paddock} handleDelete = {this.handleDelete} handleEdit={this.handleEdit} handleDeleteDino={this.handleDeleteDino} handleEditDino={this.handleEditDino} handleFeedDino={this.handleFeedDino}/>
       </>
     )
 

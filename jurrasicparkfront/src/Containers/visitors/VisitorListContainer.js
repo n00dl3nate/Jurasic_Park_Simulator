@@ -53,7 +53,7 @@ class VisitorListContainer extends Component {
     const request = new Request();
     const url = '/visitors/' + id;
     request.delete(url).then(() => {
-      window.location = '/dinosaurs'
+      window.location = window.location.href
     })
   }
 

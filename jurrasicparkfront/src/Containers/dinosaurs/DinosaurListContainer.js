@@ -16,7 +16,7 @@ class DinosaurListContainer extends Component {
     console.log(this.props,"Your Propppppsss init");
     const request = new Request();
     request.patch('/dinosaurs/' + id, dinosaur).then(() => {
-      window.location = '/dinosaurs'
+      window.location = window.location.href
     })
   }
 
@@ -24,12 +24,11 @@ class DinosaurListContainer extends Component {
     const request = new Request();
     const url = '/dinosaurs/' + id;
     request.delete(url).then(() => {
-      window.location = '/dinosaurs'
+      window.location = window.location.href
     })
   }
 
   handleEdit(id){
-    console.log(id,"yeoooooooo");
     window.location = '/dinosaurs/edit/' + id
   }
 

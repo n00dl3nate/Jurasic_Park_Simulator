@@ -8,7 +8,7 @@ const DinosaurForm = (props) => {
 
     let diet = "Herbivore"
     console.log(event.target.name.value,"@@@@@@@@@@@@@@")
-    if(event.target.type.value === "Tyrannosaurus Rex" || event.target.type.value === "Velociraptor"){
+    if(event.target.type.value === "Tyrannosaurus Rex" || event.target.type.value === "Velociraptor" || event.target.type.value === "Spinosaurus" ){
       diet = "Carnivore";
     }
     const dinosaur = {
@@ -51,7 +51,6 @@ const DinosaurForm = (props) => {
               <option value="Brachiosaurus">Brachiosaurus</option>
             </select>
             </div>
-
 
             <div class="col-10">
               <label for="type">Gender</label>

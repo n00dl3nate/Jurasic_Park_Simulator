@@ -1,10 +1,10 @@
 import React  from 'react';
 import {Link} from 'react-router-dom';
 
-const Paddock = (props) => {
+const Visitor = (props) => {
 
   const onDelete = () => {
-    props.handleDelete(props.dinosaur.id);
+    props.handleDelete(props.visitor.id);
   }
 
   if(!props.visitor && !props.zone){
@@ -29,9 +29,10 @@ const Paddock = (props) => {
         <td>{props.visitor.name}</td>
         <td>{props.visitor.age}</td>
         <td>{props.visitor.money}</td>
+        <td><button class='table' onClick={onDelete}>Remove</button></td>
     </tr>
     </>
   )
 }
 
-export default Paddock;
+export default Visitor;

@@ -17,7 +17,6 @@ const DinosaurDetails = (props) => {
 
 
   const onEdit = () => {
-    console.log(props.dinosaur,"YEOOHHH");
     props.handleEdit(props.dinosaur.id)
   }
 

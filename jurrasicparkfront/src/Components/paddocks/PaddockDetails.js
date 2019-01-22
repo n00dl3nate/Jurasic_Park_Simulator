@@ -38,7 +38,7 @@ const PaddockDetails = (props) => {
     <React.Fragment>
     <button onClick={onDelete}>Destroy Paddock</button>
     <button onClick={onEdit}>Edit Paddock</button>
-    <DinosaurList dinosaurs = {props.paddock._embedded.dinosaurs} pad = {true}/>
+    <DinosaurList dinosaurs = {props.paddock._embedded.dinosaurs} handleDelete={props.handleDeleteDino} handleEdit={props.handleEditDino} handleFeed={props.handleFeedDino}/>
     </React.Fragment>
 
 

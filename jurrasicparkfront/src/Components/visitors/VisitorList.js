@@ -5,12 +5,15 @@ const VisitorList = (props) => {
   console.log(props,"@@@@@")
 	const visitors = props.visitors.map((visitor) => {
 		 	return (
-				<Visitor visitor={visitor} zone={visitor.zone} />)
+				<Visitor visitor={visitor} zone={visitor.zone} handleDelete={props.handleDelete}  />)
 		})
 
     const addVisitor = () => {
       props.addVisitor();
     }
+
+
+
 
 	return (
     <>

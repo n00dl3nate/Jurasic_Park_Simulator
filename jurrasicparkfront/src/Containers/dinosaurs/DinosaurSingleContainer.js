@@ -24,7 +24,7 @@ class DinosaurSingleContainer extends Component {
     const request = new Request();
     const url = '/dinosaurs/' + id;
     request.delete(url).then(() => {
-      window.location = '/dinosaurs'
+      window.location = window.location.href
     })
   }
 
@@ -35,7 +35,7 @@ class DinosaurSingleContainer extends Component {
   handleFeed(dinosaur,id){
     const request = new Request();
     request.patch('/dinosaurs/' + id, dinosaur).then(() => {
-      window.location = '/dinosaurs/' + id
+      window.location = window.location.href
     })
   }
 
