@@ -64,9 +64,23 @@ h3.SubHeadingH3 {
   color: lightgrey;
 }
 
+h2.subHeading{
+  margin-left: 40px;
+  font-family:"ZCOOLQingKeHuang",monospace;
+  color: lightgrey;
+  font-size: 24px;
+  font-weight: normal;
+}
+
 h2 {
   font-family:"ZCOOLQingKeHuang",monospace;
   color: lightgrey;
+}
+
+h2.NavBar {
+  font-family:"ZCOOL KuaiLe",monospace;
+  font-size: 2vw;
+
 }
 
 
@@ -261,4 +275,34 @@ input.buttonAdd {
   text-decoration: none;
   cursor: pointer;
   width:90%;
+}
+
+input.Home {
+  width: 100%;
+  height:280px;
+  background-color: black;
+  border: none;
+  color: white;
+  text-align: center;
+  font-size: 16px;
+  opacity: 0.6;
+  transition: 0.3s;
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+  font-family:"ZCOOL KuaiLe",monospace;
+  font-size: 2.5vw;
+}
+
+
+div.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+
+  padding: 10px;
+}
+div.grid-item {
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
 }

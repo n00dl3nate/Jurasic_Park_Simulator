@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom';
 import DinosaurList from '../dinosaurs/DinosaurList.js'
 
 const PaddockDetails = (props) => {
+console.log(props,"YEOOOOO")
 
   const onDelete = () => {
     props.handleDelete(props.paddock.id);
@@ -17,11 +18,18 @@ const PaddockDetails = (props) => {
   }
 
   if(props.paddock.name === 'Lab'){
-    if(!(!props.paddock._embedded.dinosaur)){
+
+    if(!props.paddock._embedded.dinosaurs){
       return null
     }
-    else{
-      return <DinosaurList dinosaurs = {props.paddock._embedded.dinosaurs}/>
+    else {
+      return (
+      <>
+      <h3>Dinosaurs in Paddock</h3>
+      <DinosaurList dinosaurs =
+     {props.paddock._embedded.dinosaurs} handleDelete = {props.handleDeleteDino} handleEdit= {props.handleEditDino} handleFeed= {props.handleFeedDino} />
+     </>
+   )
     }
   }
 
@@ -29,19 +37,18 @@ const PaddockDetails = (props) => {
     return (
       <React.Fragment>
       <button onClick={onDelete}>Destroy Paddock</button>
-      <button onClick={onEdit}>Edit Paddock</button>
       </React.Fragment>
     )
   }
 
+  console.log(props.handleDeleteDino,"ugyuyuyuyuygg")
+
   return (
     <React.Fragment>
     <button onClick={onDelete}>Destroy Paddock</button>
-    <button onClick={onEdit}>Edit Paddock</button>
-    <DinosaurList dinosaurs = {props.paddock._embedded.dinosaurs} handleDelete={props.handleDeleteDino} handleEdit={props.handleEditDino} handleFeed={props.handleFeedDino}/>
+    <h2 class = "subHeading">Dinosaurs in Paddock</h2>
+    <DinosaurList dinosaurs = {props.paddock._embedded.dinosaurs} handleDelete = {props.handleDeleteDino} handleEdit= {props.handleEditDino} handleFeed= {props.handleFeedDino}/>
     </React.Fragment>
-
-
   )
 }
 

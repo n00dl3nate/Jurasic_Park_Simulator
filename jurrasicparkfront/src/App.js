@@ -13,6 +13,7 @@ import PaddockFormContainer from "./Containers/paddocks/PaddockFormContainer.js"
 import DinosaurEditContainer from "./Containers/dinosaurs/DinosaurEditContainer.js"
 import DinosaurSingleContainer from "./Containers/dinosaurs/DinosaurSingleContainer.js"
 import PaddockSingleContainer from "./Containers/paddocks/PaddockSingleContainer.js"
+import HomeContainer from "./Containers/Home/HomeContainer.js"
 import './App.css';
 
 class App extends Component {
@@ -29,6 +30,8 @@ class App extends Component {
           <InfoBar/>
           </>
           <Switch>
+            <Route exact path= "/"
+            component={HomeContainer}/>
             <Route exact path = '/dinosaurs' component={DinosaurListContainer}/>
             <Route exact path = '/dinosaurs/new' component={DinosaurFormContainer}/>
             <Route exact path = '/paddocks' component={PaddockListContainer}/>

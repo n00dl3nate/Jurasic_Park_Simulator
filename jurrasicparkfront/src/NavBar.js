@@ -10,15 +10,15 @@ const NavBar = (props) => {
 
       <ul>
         <li className="navLink">
-          <Link to="/dinosaurs">Dinosaurs</Link>
+          <Link to="/dinosaurs"><h2 class="NavBar">Dinosaurs</h2></Link>
         </li>
 
         <li className="navLink">
-          <Link to="/paddocks">Paddocks</Link>
+          <Link to="/paddocks"><h2 class="NavBar">Paddocks</h2></Link>
         </li>
 
         <li className="navLink">
-          <Link to="/visitors" >Visitors</Link>
+          <Link to="/visitors" ><h2 class="NavBar">Visitors</h2></Link>
         </li>
 
       </ul>

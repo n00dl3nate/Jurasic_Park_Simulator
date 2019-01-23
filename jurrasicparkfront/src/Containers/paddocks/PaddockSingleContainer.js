@@ -63,7 +63,7 @@ class PaddockSingleContainer extends Component {
     return (
       <>
         <Paddock paddock = {this.state.paddock} />
-        <PaddockDetails paddock = {this.state.paddock} handleDelete = {this.handleDelete} handleEdit={this.handleEdit} handleDeleteDino={this.handleDeleteDino} handleEditDino={this.handleEditDino} handleFeedDino={this.handleFeedDino}/>
+        <PaddockDetails paddock = {this.state.paddock} handleDelete = {this.handleDelete} handleEdit = {this.handleEdit} handleDeleteDino = {this.handleDeleteDino} handleEditDino = {this.handleEditDino} handleFeedDino = {this.handleFeedDino}/>
       </>
     )
 

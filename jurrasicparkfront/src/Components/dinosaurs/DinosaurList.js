@@ -3,7 +3,6 @@ import Dinosaur from './Dinosaur.js';
 
 
 const DinosaurList = (props) => {
-	console.log(props,"HEre y go ")
 	const dinosaurs = props.dinosaurs.map((dinosaur) => {
 		 	return (
 				<>
@@ -15,7 +14,7 @@ const DinosaurList = (props) => {
 	return (
 		<>
 		<ul>
-		
+
 			<table id="dinosaurs">
 
 

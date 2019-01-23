@@ -18,13 +18,9 @@ const Dinosaur = (props) => {
     }
   }
 
-
   const onEdit = () => {
-    console.log(props.dinosaur,"YEOOHHH");
     props.handleEdit(props.dinosaur.id)
   }
-
-  console.log(props,"HDE")
 
   if(!props.dinosaur && !props.paddock){
     return null;
@@ -45,7 +41,7 @@ const Dinosaur = (props) => {
     </>
   )}
 
-  console.log(props,"fffdfdfd")
+
   return (
     <>
       <tr class="rows">

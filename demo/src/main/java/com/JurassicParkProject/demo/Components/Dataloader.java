@@ -56,6 +56,7 @@ public class Dataloader implements ApplicationRunner {
         Visitor visitor3 = new Visitor("Jon Jones",32,100,zone);
         visitorRepository.save(visitor3);
 
+
         Dinosaur dinosaur1 = new Dinosaur("Sam","Tyrannosaurus Rex","Male","Carnivore",paddock3);
         dinosaurRepository.save(dinosaur1);
 
@@ -64,6 +65,18 @@ public class Dataloader implements ApplicationRunner {
 
         Dinosaur dinosaur3 = new Dinosaur("Oz","Stegosaurus","Male","Herbivore",paddock1);
         dinosaurRepository.save(dinosaur3);
+
+        Dinosaur dinosaur4 = new Dinosaur("Zorro","Velociraptor","Female","Carnivore",paddock2);
+        dinosaurRepository.save(dinosaur4);
+
+        Dinosaur dinosaur5 = new Dinosaur("Blue","Velociraptor","Female","Carnivore",paddock2);
+        dinosaurRepository.save(dinosaur5);
+
+        Dinosaur dinosaur6 = new Dinosaur("Ninja","Velociraptor","Male","Carnivore",paddock2);
+        dinosaurRepository.save(dinosaur6);
+
+        Dinosaur dinosaur7 = new Dinosaur("Beast","Stegosaurus","Female","Herbivore",paddock1);
+        dinosaurRepository.save(dinosaur7);
 
 
     }

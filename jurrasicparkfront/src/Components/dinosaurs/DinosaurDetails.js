@@ -8,13 +8,15 @@ const DinosaurDetails = (props) => {
   }
 
   const feed = () => {
-    const dinosaur = {
-        "food": (props.dinosaur.food += 10),
-      }
-      const id = props.dinosaur.id
-    props.handleFeed(dinosaur,id)
+    if(props.dinosaur.food <= 100) {
+      const food = (100 - props.dinosaur.food)
+      const dinosaur = {
+          "food": (props.dinosaur.food += food)
+        }
+        const id = props.dinosaur.id
+      props.handleFeed(dinosaur,id)
+    }
   }
-
 
   const onEdit = () => {
     props.handleEdit(props.dinosaur.id)
